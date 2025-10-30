@@ -1,6 +1,6 @@
 """
-Task 1 – Simple Function with Arithmetic
----------------------------------------
+Task 1 Simple Function with Arithmetic
+
 
 """
 
