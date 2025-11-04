@@ -1,31 +1,44 @@
-
 """
-Lab 3.3 – Operator Frequency Counter
+Lab 3.3 – Operator Frequency Counter + Expression Result
 
 Goals:
 - Practice using strings and dictionaries.
 - Count character frequencies in user-provided text.
+- Evaluate the arithmetic expression safely.
 
 Instructions:
 1. Ask the user for an arithmetic expression, e.g. "3 + 5 * (2 - 1) + 7 / 2".
-2. Count how many times each operator occurs:
-   +  -  *  /  (  )
+2. Count how many times each operator occurs: + - * / ( )
 3. Store counts in a dictionary.
-4. Print the result.
+4. Evaluate the expression.
+5. Print the result and operator counts.
 """
 
-# TODO: Get input from the user
+# 1. Get input from the user
 expression = input("Enter an arithmetic expression: ")
 
-# Define possible operator symbols
+# 2. Define possible operator symbols
 operators = ['+', '-', '*', '/', '(', ')']
 
-# TODO: Initialize frequency dictionary
-operator_counts = {}
+# 3. Initialize frequency dictionary
+operator_counts = {op: 0 for op in operators}
 
-# TODO: Count operator occurrences
+# 4. Count operator occurrences
 for char in expression:
-    pass  # check if char in operators, update counts
+    if char in operators:
+        operator_counts[char] += 1
 
-# TODO: Print results
-print("Operator counts:", operator_counts)
+# 5. Safely evaluate the arithmetic expression
+try:
+    result = eval(expression)
+except Exception as e:
+    result = f"Error evaluating expression: {e}"
+
+# 6. Print results
+print("\n=== Operator Frequency Counter ===")
+for op, count in operator_counts.items():
+    print(f"{op}: {count}")
+
+print("\n=== Expression Result ===")
+print(f"Expression: {expression}")
+print(f"Result: {result}")
