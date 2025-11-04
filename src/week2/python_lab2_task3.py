@@ -1,5 +1,5 @@
 """
-Lab 3.3 – Operator Frequency Counter + Expression Result
+Lab 3.3 Operator Frequency Counter + Expression Result
 
 Goals:
 - Practice using strings and dictionaries.
