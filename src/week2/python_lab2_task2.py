@@ -1,5 +1,5 @@
 """
-Lab 3.2 – Comprehensions and Transformations
+Lab 3.2 Comprehensions and Transformations
 
 Goals:
 - Practice list, set, and dictionary comprehensions.
@@ -16,16 +16,23 @@ Given the list:
 5. Print all results.
 """
 
-# Fill in your own numbers or generate 10 random integers
-numbers = []
+# You can also generate random numbers if you want, but we’ll use the given list
+numbers = [3, 8, -2, 7, 0, -5, 10]
 
-# TODO: Implement comprehensions
-squares = []
-positives = []
-even_squares = set()
-cubes = {}
+# 1. List of squares
+squares = [n ** 2 for n in numbers]
 
-# TODO: Print results
+# 2. List of positives
+positives = [n for n in numbers if n > 0]
+
+# 3. Set of even squares
+even_squares = {n ** 2 for n in numbers if n % 2 == 0}
+
+# 4. Dictionary of cubes
+cubes = {n: n ** 3 for n in numbers}
+
+# 5. Print results
+print("Numbers:", numbers)
 print("Squares:", squares)
 print("Positives:", positives)
 print("Even squares:", even_squares)
